@@ -47,3 +47,21 @@
 #     print('you lose')
 # else :
 #     print('INVALID CHOICE')
+# section 4
+correct_pin = 4321
+balance = 500
+user_PIN_input = int(input('Enter your PIN: '))
+if user_PIN_input == correct_pin:
+    Withdrawal=int(input('how much you want to withdraw?: '))
+    if Withdrawal>balance:
+        print('not enough money')
+    else:
+        want_receipt = input('do yo want to receipt?: yes/no ')
+        if want_receipt=='yes':
+            print('Withdrawal approved with receipt')
+        elif want_receipt=='no':
+            print('Withdrawal approved without receipt')
+        else:
+            print('Withdrawal approved')
+else:
+    print('wrong password')
