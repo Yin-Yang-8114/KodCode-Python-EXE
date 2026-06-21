@@ -26,3 +26,26 @@ elif battery < 20 and is_charging ==False:
 else :
     print('Battery OK')
 # part 1 section 5
+password = str(input("Enter your password : "))
+if password == 'python123' :
+    print('approved')
+else :
+    print('access denied')
+# part 1 section 6
+Define_score = 72
+if Define_score > 90 :
+    print('Excellent')
+elif Define_score > 75 :
+    print('Good')
+else:
+    print('fail')
+# part 1 section 7
+first_number = int(input("Enter the first number : "))
+second_number = int(input("Enter the second number : "))
+if first_number > second_number :
+    print('First is bigger')
+elif second_number == first_number :
+    print('equal')
+else:
+    print('second is bigger')
+# part 1 section 8
