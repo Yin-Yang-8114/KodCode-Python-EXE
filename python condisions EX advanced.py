@@ -19,3 +19,8 @@ elif menu_choice == "cave":
             print('Invalid path')
     else :
         print('Its too dark to enter')
+elif menu_choice == "river":
+    print('You find a boat')
+else:
+    print('unknown place')
+
