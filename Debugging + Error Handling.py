@@ -5,6 +5,7 @@
 #     print("Next year you will be", next_year)
 # except ValueError:
 #     print("invalid literal for int() with base 10")
+from sys import excepthook
 
 # # part 1 section 2
 # try:
@@ -75,14 +76,14 @@
 # # part 1 section 8
 # price = 100
 # discount = 20
-# final_price = price - discount / 100 #ogical error becouse that not the way you calculting %
+# final_price = price - discount / 100 #ogical error because that not the way you calculating %
 # print(final_price)
 # print(f'you should writhe that price - (price * (discount/100)): {price - (price * (discount/100))}')
 
 # # part 1 section 9
 # password = "abc123"
 # guess = input("Enter password: ")
-# if guess != password: # logic error i need to chack if the password corrct, not if dose not  correct
+# if guess != password: # logic error I need to chack if the password corrct, not if it does not  correct
 #     print("Login successful")
 # else:
 #     print("Wrong password")
@@ -111,7 +112,152 @@
 
 
 
-# part 2 section 1
-celsius = input("Celsius: ")
-fahrenheit = int(celsius) * 9 / 5 + 32
-print(fahrenheit)
+# # part 2 section 1
+# celsius = input("Celsius: ")
+# try:
+#     fahrenheit = int(celsius) * 9 / 5 + 32
+# except ValueError:
+#     print("Temperature must be a number.")
+#     exit(0)
+# print(fahrenheit)
+
+# # part 2 section 2
+# word = input("Enter word: ")
+# try:
+#     print(word[0])
+# except IndexError:
+#     print("Word is empty")
+
+# # part 2 section 3
+# scores = [90, 80, 100]
+# total = 0
+# for score in scores:
+#     total = score # should be += to calculate
+# average = total / len(scores)
+# print(average)
+#
+# scores = [90, 80, 100]
+# total = 0
+# for score in scores:
+#     total += score # fixed
+# average = total / len(scores)
+# print(average)
+
+# # part 2 section 4
+#
+# products = {"pen": 4,"notebook": 12}
+# product = input("Product: ")
+# try:
+#     amount = int(input("Amount: "))
+# except ValueError:
+#     print("Please enter a number")
+#     exit()
+# try:
+#     print(products[product] * amount)
+# except KeyError:
+#     print("Please enter a valid product")
+#     exit()
+
+# # part 2 section 5
+# files = ["data.txt", "users.csv", "notes.txt"]
+# try:
+#     choice = int(input("Choose file number: "))
+# except ValueError:
+#     print("Please enter a number")
+#     exit()
+# try:
+#     print(files[choice])
+# except IndexError:
+#     print("out of range")
+#     exit()
+
+# # part 2 section 6
+# numbers = [4, 10, 2, 8]
+# maximum = 0
+# for number in numbers:
+#     if number < maximum: # should be greater than
+#         maximum = number
+# print(maximum)
+#
+#
+# numbers = [4, 10, 2, 8]
+# maximum = 0
+#
+# for number in numbers:
+#     if number > maximum:  # fixed
+#         maximum = number
+# print(maximum)
+
+# #  part 2 section 7
+#
+# user = {"name": "Dana","age": 25}
+# field = input("Choose field: ")
+# try:
+#     print(user[field].upper())
+# except AttributeError:
+#     print("cant do int upper ")
+#     exit()
+# except KeyError:
+#     print("field not exist")
+#     exit()
+
+# # part 2 section 8
+
+# price = int(input("Price: "))
+# amount = int(input("Amount: "))
+# total = price * amount
+# if amount > 3:
+#     total = total - 10 # error not calculating %
+# print(total)
+#
+# price = int(input("Price: "))
+# amount = int(input("Amount: "))
+# total = price * amount
+# if amount > 3:
+#     total = total - total * 10/100
+# print(total)
+
+# # part 2 section 9
+# grade = int(input("Grade: "))
+# if grade >= 90:
+#     print("Excellent")
+# if grade >= 70: # logic error should be a flow  condition: if not so not another con
+#     print("Good")
+# if grade >= 55: # same
+#     print("Pass")
+# else:
+#     print("Fail")
+#
+# # fixes code
+# try:
+#     grade = int(input("Grade: "))
+# except ValueError:
+#     print("please enter a number")
+# if grade >= 90:
+#     print("Excellent")
+# elif grade >= 70:
+#     print("Good")
+# elif grade >= 55:
+#     print("Pass")
+# else:
+#     print("Fail")
+
+# # part 2 section 10
+
+# balance = 100
+# action = input("Action: ")
+# try:
+#     amount = int(input("Amount: "))
+#     if action == "deposit":
+#         balance = balance + amount
+#     elif action == "withdraw":
+#         if balance - amount > 0:
+#             balance = balance - amount
+#         else:
+#             print("Not enough money")
+#     print("Balance:", balance)
+# except ValueError:
+#     print("Please enter a number")
+#     exit()
+# finally:
+#     print("Bank action finished")
